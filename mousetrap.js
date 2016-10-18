@@ -968,6 +968,8 @@
      *
      * @param {Event} e
      * @param {Element} element
+     * @param {Object=} combo only used by the global-bind plugin
+     * @param {Object=} sequence only used by the global-bind plugin
      * @return {boolean}
      */
     Mousetrap.prototype.stopCallback = function(e, element) {
