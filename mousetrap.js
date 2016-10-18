@@ -20,6 +20,12 @@
  * @version 1.6.0
  * @url craig.is/killing/mice
  */
+
+/**
+ * @param {Window} window the window containing the current DOM document
+ * @param {Document} document the current DOM document
+ * @param {Object=} undefined should never be passed, is the undefined value
+ */
 (function(window, document, undefined) {
 
     // Check if mousetrap is used inside browser, if not, return
