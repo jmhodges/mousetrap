@@ -438,6 +438,10 @@
         return _belongsTo(element.parentNode, ancestor);
     }
 
+    /**
+     * The constructor for the Mousetrap global.
+     * @constructor {Mousetrap}
+     */
     function Mousetrap(targetElement) {
         var self = this;
 
