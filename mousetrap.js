@@ -614,6 +614,8 @@
          *
          * @param {Function} callback
          * @param {Event} e
+         * @param {string=} combo only used by the global-bind plugin
+         * @param {?=} sequence only used by the global-bind plugin
          * @returns void
          */
         function _fireCallback(callback, e, combo, sequence) {
@@ -977,12 +979,11 @@
      * should we stop this event before firing off callbacks
      *
      * @param {Event} e
-     * @param {Element} element
-     * @param {Object=} combo only used by the global-bind plugin
-     * @param {Object=} sequence only used by the global-bind plugin
+     * @param {EventTarget|Element} element
+     * @param {...*} varargs used by global-bind plugin
      * @return {boolean}
      */
-    Mousetrap.prototype.stopCallback = function(e, element) {
+    Mousetrap.prototype.stopCallback = function(e, element, varargs) {
         var self = this;
 
         // if the element has the class "mousetrap" then no need to stop
@@ -1000,8 +1001,9 @@
 
     /**
      * exposes _handleKey publicly so it can be overwritten by extensions
+     * @param {...*} varargs
      */
-    Mousetrap.prototype.handleKey = function() {
+    Mousetrap.prototype.handleKey = function(varargs) {
         var self = this;
         return self._handleKey.apply(self, arguments);
     };
@@ -1025,7 +1027,7 @@
      * now that mousetrap is a constructor function.
      */
     Mousetrap.init = function() {
-        var documentMousetrap = Mousetrap(document);
+        var documentMousetrap = new Mousetrap(document);
         for (var method in documentMousetrap) {
             if (method.charAt(0) !== '_') {
                 Mousetrap[method] = (function(method) {
