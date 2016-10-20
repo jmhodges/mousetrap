@@ -174,7 +174,7 @@
     /**
      * cross browser add event method
      *
-     * @param {Element|HTMLDocument} object
+     * @param {Element|Document} object
      * @param {string} type
      * @param {Function} callback
      * @returns {void}
@@ -442,7 +442,7 @@
     /**
      * The constructor for the Mousetrap global.
      * @constructor
-     * @param {HTMLDocument|Element} targetElement element to attach key events to.
+     * @param {Document|Element} targetElement element to attach key events to.
      * @returns {Mousetrap}
      */
     function Mousetrap(targetElement) {
