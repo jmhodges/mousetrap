@@ -441,7 +441,7 @@
 
     /**
      * The constructor for the Mousetrap global.
-     * @constructor {Mousetrap}
+     * @constructor
      */
     function Mousetrap(targetElement) {
         var self = this;
