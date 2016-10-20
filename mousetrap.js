@@ -343,6 +343,7 @@
      * @param {string} key - character for key
      * @param {Array} modifiers
      * @param {string=} action passed in
+     * @returns {string} chosen action
      */
     function _pickBestAction(key, modifiers, action) {
 
@@ -1002,6 +1003,7 @@
     /**
      * exposes _handleKey publicly so it can be overwritten by extensions
      * @param {...*} varargs
+     * @returns {void}
      */
     Mousetrap.prototype.handleKey = function(varargs) {
         var self = this;
