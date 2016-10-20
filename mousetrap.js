@@ -174,7 +174,7 @@
     /**
      * cross browser add event method
      *
-     * @param {Element|Document} object
+     * @param {Document|Element} object
      * @param {string} type
      * @param {Function} callback
      * @returns {void}
@@ -457,7 +457,7 @@
         /**
          * element to attach key events to
          *
-         * @type {Element}
+         * @type {Document|Element}
          */
         self.target = targetElement;
 
