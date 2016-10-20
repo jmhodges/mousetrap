@@ -918,7 +918,7 @@
      * @param {string|Array} keys
      * @param {Function} callback
      * @param {string=} action - 'keypress', 'keydown', or 'keyup'
-     * @returns {void}
+     * @returns {Mousetrap}
      */
     Mousetrap.prototype.bind = function(keys, callback, action) {
         var self = this;
@@ -954,7 +954,7 @@
      *
      * @param {string} keys
      * @param {string=} action
-     * @returns {void}
+     * @returns {Mousetrap}
      */
     Mousetrap.prototype.trigger = function(keys, action) {
         var self = this;
@@ -969,7 +969,7 @@
      * if you want to clear out the current keyboard shortcuts and bind
      * new ones - for example if you switch to another page
      *
-     * @returns {void}
+     * @returns {Mousetrap}
      */
     Mousetrap.prototype.reset = function() {
         var self = this;
