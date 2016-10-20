@@ -177,7 +177,7 @@
      * @param {Element|HTMLDocument} object
      * @param {string} type
      * @param {Function} callback
-     * @returns void
+     * @returns {void}
      */
     function _addEvent(object, type, callback) {
         if (object.addEventListener) {
@@ -276,7 +276,7 @@
      * prevents default for this event
      *
      * @param {Event} e
-     * @returns void
+     * @returns {void}
      */
     function _preventDefault(e) {
         if (e.preventDefault) {
@@ -291,7 +291,7 @@
      * stops propogation for this event
      *
      * @param {Event} e
-     * @returns void
+     * @returns {void}
      */
     function _stopPropagation(e) {
         if (e.stopPropagation) {
@@ -513,7 +513,7 @@
          * resets all sequence counters except for the ones passed in
          *
          * @param {Object} doNotReset
-         * @returns void
+         * @returns {void}
          */
         function _resetSequences(doNotReset) {
             doNotReset = doNotReset || {};
@@ -614,9 +614,9 @@
          *
          * @param {Function} callback
          * @param {Event} e
-         * @param {string=} combo only used by the global-bind plugin
+         * @param {string=} combo used by the global-bind and pause plugins
          * @param {?=} sequence only used by the global-bind plugin
-         * @returns void
+         * @returns {void}
          */
         function _fireCallback(callback, e, combo, sequence) {
 
@@ -637,7 +637,7 @@
          * @param {string} character
          * @param {Array} modifiers
          * @param {Event} e
-         * @returns void
+         * @returns {void}
          */
         self._handleKey = function(character, modifiers, e) {
             var callbacks = _getMatches(character, modifiers, e);
@@ -723,7 +723,7 @@
          * handles a keydown event
          *
          * @param {Event} e
-         * @returns void
+         * @returns {void}
          */
         function _handleKeyEvent(e) {
 
@@ -755,7 +755,7 @@
          * this is so after each key press in the sequence you have 1 second
          * to press the next key before you have to start over
          *
-         * @returns void
+         * @returns {void}
          */
         function _resetSequenceTimer() {
             clearTimeout(_resetTimer);
@@ -769,7 +769,7 @@
          * @param {Array} keys
          * @param {Function} callback
          * @param {string=} action
-         * @returns void
+         * @returns {void}
          */
         function _bindSequence(combo, keys, callback, action) {
 
@@ -797,7 +797,7 @@
              * to reset all sequence counters as soon as this sequence is done
              *
              * @param {Event} e
-             * @returns void
+             * @returns {void}
              */
             function _callbackAndReset(e) {
                 _fireCallback(callback, e, combo);
@@ -838,7 +838,7 @@
          * @param {string=} action
          * @param {string=} sequenceName - name of sequence if part of sequence
          * @param {number=} level - what part of the sequence the command is
-         * @returns void
+         * @returns {void}
          */
         function _bindSingle(combination, callback, action, sequenceName, level) {
 
@@ -889,7 +889,7 @@
          * @param {Array} combinations
          * @param {Function} callback
          * @param {string|undefined} action
-         * @returns void
+         * @returns {void}
          */
         self._bindMultiple = function(combinations, callback, action) {
             for (var i = 0; i < combinations.length; ++i) {
@@ -915,7 +915,7 @@
      * @param {string|Array} keys
      * @param {Function} callback
      * @param {string=} action - 'keypress', 'keydown', or 'keyup'
-     * @returns void
+     * @returns {void}
      */
     Mousetrap.prototype.bind = function(keys, callback, action) {
         var self = this;
@@ -939,7 +939,7 @@
      *
      * @param {string|Array} keys
      * @param {string} action
-     * @returns void
+     * @returns {void}
      */
     Mousetrap.prototype.unbind = function(keys, action) {
         var self = this;
@@ -951,7 +951,7 @@
      *
      * @param {string} keys
      * @param {string=} action
-     * @returns void
+     * @returns {void}
      */
     Mousetrap.prototype.trigger = function(keys, action) {
         var self = this;
@@ -966,7 +966,7 @@
      * if you want to clear out the current keyboard shortcuts and bind
      * new ones - for example if you switch to another page
      *
-     * @returns void
+     * @returns {void}
      */
     Mousetrap.prototype.reset = function() {
         var self = this;
