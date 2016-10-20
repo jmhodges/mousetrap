@@ -942,7 +942,7 @@
      *
      * @param {string|Array} keys
      * @param {string} action
-     * @returns {void}
+     * @returns {Mousetrap}
      */
     Mousetrap.prototype.unbind = function(keys, action) {
         var self = this;
