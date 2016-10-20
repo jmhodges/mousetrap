@@ -442,6 +442,7 @@
     /**
      * The constructor for the Mousetrap global.
      * @constructor
+     * @param {Element} targetElement element to attach key events to.
      * @returns {Mousetrap}
      */
     function Mousetrap(targetElement) {
